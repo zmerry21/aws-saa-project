@@ -46,6 +46,6 @@ Security Groups:
 
 ### Step 5: Test Application
 - Access via browser:
-  http://EC2-Public-IP/index.php
+  http://3.94.214.107/index.php
 
 ---
