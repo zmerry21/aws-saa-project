@@ -20,3 +20,32 @@ User → Internet → EC2 (Public Subnet) → RDS (Private Subnet)
 Security Groups:
 - Web SG: Allows HTTP (80), HTTPS (443), SSH (22)
 - DB SG: Allows MySQL (3306) only from Web SG
+
+## Deployment Steps
+
+### Step 1: Create VPC
+- Create 2 subnets:
+  - Public subnet (Web server)
+  - Private subnet (Database)
+
+### Step 2: Launch EC2 Instance
+- Install:
+  - Apache
+  - PHP
+- Place in Public Subnet
+
+### Step 3: Create RDS MySQL Database
+- Place in Private Subnet
+- Disable public access
+- Allow inbound from Web Security Group
+
+### Step 4: Configure index.php
+- Update database endpoint
+- Place file in:
+  /var/www/html/
+
+### Step 5: Test Application
+- Access via browser:
+  http://EC2-Public-IP/index.php
+
+---
